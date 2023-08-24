@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".FinalActivity">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical"
+        android:background="@drawable/logo_33"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <TextView
+            android:background="@color/black"
+            android:text="DOMINIC AZIMOV"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:layout_gravity="center"
+            android:gravity="bottom|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="SAVE"
+        android:id="@+id/btnMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
