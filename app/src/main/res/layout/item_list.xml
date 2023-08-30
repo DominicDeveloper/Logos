@@ -5,6 +5,7 @@
     android:layout_margin="10dp"
     app:cardElevation="5dp"
     app:cardCornerRadius="10dp"
+    android:id="@+id/itemListImage"
     app:cardBackgroundColor="@color/white"
     android:layout_height="380dp">
 
@@ -14,8 +15,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/itemListImage"
-            android:src="@drawable/logo_1"
+            android:src="@drawable/logo9"
+            android:id="@+id/img"
             android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -25,6 +26,47 @@
             android:id="@+id/itemListProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/itemListTextForBoysGirlsMultiLove"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_marginBottom="13dp"
+            android:fontFamily="@font/ffont1"
+            android:textColor="@color/white"
+            android:padding="13dp"
+            android:textAllCaps="true"
+            android:textSize="19sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/itemListTextForLogoEmoji"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_marginBottom="43dp"
+            android:fontFamily="@font/ffont1"
+            android:textColor="@color/white"
+            android:padding="13dp"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

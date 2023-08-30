@@ -7,9 +7,11 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.widget.Toast
 import com.asadbek.logos.adapters.AdapterParts
 import com.asadbek.logos.databinding.ActivitySecondBinding
+import com.asadbek.logos.models.CurrentImg
 import com.asadbek.logos.models.Parts
 import com.asadbek.logos.models.TypeOfImage
 
@@ -23,13 +25,15 @@ class SecondActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         list = ArrayList()
+
         loadList()
         adapterParts = AdapterParts(this,list,object : AdapterParts.RvClick{
             override fun onClick(parts: Parts) {
                 if(checkInternet()){
-                    TypeOfImage.type = parts.name.toString()
-                    val intent= Intent(this@SecondActivity,ListActivity::class.java)
-                    startActivity(intent)
+                        TypeOfImage.type = parts.name.toString()
+                        CurrentImg.typeOfImg = parts.imageToken.toString()
+                        val intent= Intent(this@SecondActivity,ListActivity::class.java)
+                        startActivity(intent)
                 }else{
                     Toast.makeText(this@SecondActivity, "No connection! try again", Toast.LENGTH_SHORT).show()
                 }
@@ -56,19 +60,29 @@ class SecondActivity : AppCompatActivity() {
          }
 
     private fun loadList() {
-        list.add(Parts("GAMING LOGO","logo_1"))
-        list.add(Parts("ESPORTS LOGO","logo_2"))
-        list.add(Parts("FF LOGO","logo_3"))
-        list.add(Parts("ANIME LOGO GIRLS","logo_4"))
-        list.add(Parts("ANIME LOGO BOYS","logo_5"))
-        list.add(Parts("FOR BOYS","logo_6"))
-        list.add(Parts("FOR GIRLS","logo_7"))
-        list.add(Parts("MULTI","logo_8"))
-        list.add(Parts("OTHER LOGO","logo_9"))
-        list.add(Parts("EMOJE LOGO","logo_10"))
-        list.add(Parts("HACKER LOGO","logo_11"))
-        list.add(Parts("PUBG LOGO","logo_12"))
-        list.add(Parts("FRIDAY LOGO UZBEK","logo_13"))
+       // list.add(Parts("GAMING LOGO","logo_1"))
+       // list.add(Parts("ESPORTS LOGO","logo_2"))
+      //  list.add(Parts("FF LOGO","logo_3"))
+      //  list.add(Parts("ANIME LOGO GIRLS","logo_4"))
+      //  list.add(Parts("ANIME LOGO BOYS","logo_5"))
+        list.add(Parts("FOR BOYS","boys19"))
+        list.add(Parts("FOR GIRLS","girls1"))
+        list.add(Parts("MULTI","multi1"))
+        list.add(Parts("OTHER LOGO","logo9"))
+        list.add(Parts("EMOJE LOGO","emoji1"))
+      //  list.add(Parts("HACKER LOGO","logo_11"))
+        list.add(Parts("PUBG LOGO","pubg1"))
+      //  list.add(Parts("FRIDAY LOGO UZBEK","logo_13"))
         list.add(Parts("LOVE","love3"))
+    }
+    private fun sensor(){
+
+    }
+
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+
+
+        return super.onTouchEvent(event)
     }
 }

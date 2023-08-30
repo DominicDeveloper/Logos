@@ -1,6 +1,7 @@
 package com.asadbek.logos
 
 import android.content.ContentValues
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.net.Uri
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.asadbek.logos.adapters.LogosAdapter
 import com.asadbek.logos.databinding.ActivityListBinding
+import com.asadbek.logos.models.CurrentImg
 import com.asadbek.logos.models.LogoModul
 import com.asadbek.logos.models.TypeOfImage
 import com.google.firebase.firestore.FirebaseFirestore
@@ -55,7 +57,13 @@ class ListActivity : AppCompatActivity() {
            .addOnSuccessListener { logos ->
                for (logo in logos){
                    val logoModul = logos.toObjects(LogoModul::class.java)
-                   binding.rvList2.adapter = LogosAdapter(this,logoModul)
+                   binding.rvList2.adapter = LogosAdapter(this,this,logoModul,object :LogosAdapter.onRvClick{
+                       override fun onClick(logoModul: LogoModul) {
+                           CurrentImg.imageLink = logoModul.imageLink
+                           val intent = Intent(this@ListActivity,FinalActivity::class.java)
+                           startActivity(intent)
+                       }
+                   })
                }
                binding.progress.visibility = View.GONE
            }

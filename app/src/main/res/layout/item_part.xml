@@ -21,8 +21,9 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:id="@+id/itemPartImg"
-            android:src="@drawable/logo_1"
+            android:src="@drawable/logo9"
             android:layout_width="180dp"
+            android:scaleType="centerCrop"
             android:layout_height="160dp"/>
 
         <View

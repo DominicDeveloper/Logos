@@ -18,22 +18,15 @@ class AdapterParts(val context: Context, val list:ArrayList<Parts>, val rvClick:
                 fun onBind(parts: Parts){
                     // item surati
                     when(parts.imageToken) {
-                        "logo_1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(
-                            ContextCompat.getDrawable(context,R.drawable.logo_1))
-                        "logo_2" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_2))
-                        "logo_3" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_3))
-                        "logo_4" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_4))
-                        "logo_5" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_5))
-                        "logo_6" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_6))
-                        "logo_7" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_7))
-                        "logo_8" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_8))
-                        "logo_9" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_9))
-                        "logo_10" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_10))
-                        "logo_11" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_11))
-                        "logo_12" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_12))
-                        "logo_13" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_13))
+                        "boys19" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.boys19))
+                        "girls1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.girls1))
+                        "emoji1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.emoji1))
+                        "multi1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.multi1))
+                        "pubg1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.pubg1))
                         "love3" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.love3))
-                        else -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo_1))
+                        "logo9" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo9))
+
+                        else -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_baseline_broken_image_24))
 
                     }
                     itemRv.findViewById<TextView>(R.id.itemPartText).text = parts.name!!.uppercase()
