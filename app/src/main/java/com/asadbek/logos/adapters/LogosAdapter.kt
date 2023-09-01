@@ -57,32 +57,56 @@ class LogosAdapter(private val activity: Activity,private val context: Context,p
         holder.progress.setProgress(100,true)
         when(CurrentImg.typeOfImg){
             "boys19" -> {
-                holder.textForLE.visibility = View.INVISIBLE
+                holder.textForLE.visibility = View.GONE
                 holder.textForBGML.visibility = View.VISIBLE
             }
             "girls1" -> {
-                holder.textForLE.visibility = View.INVISIBLE
+                holder.textForLE.visibility = View.GONE
                 holder.textForBGML.visibility = View.VISIBLE
             }
             "emoji1" -> {
                 holder.textForLE.visibility = View.VISIBLE
-                holder.textForBGML.visibility = View.INVISIBLE
+                holder.textForBGML.visibility = View.GONE
             }
             "logo9" -> {
                 holder.textForLE.visibility = View.VISIBLE
-                holder.textForBGML.visibility = View.INVISIBLE
+                holder.textForBGML.visibility = View.GONE
             }
             "multi1" -> {
-                holder.textForLE.visibility = View.INVISIBLE
+                holder.textForLE.visibility = View.GONE
                 holder.textForBGML.visibility = View.VISIBLE
             }
             "pubg1" -> {
                 holder.textForLE.visibility = View.VISIBLE
-                holder.textForBGML.visibility = View.INVISIBLE
+                holder.textForBGML.visibility = View.GONE
             }
             "love3" -> {
-                holder.textForLE.visibility = View.INVISIBLE
+                holder.textForLE.visibility = View.GONE
                 holder.textForBGML.visibility = View.VISIBLE
+            }
+            "gaming" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "assassin" ->{
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "clown" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "friday" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "animeboys" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "animegirls" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
             }
         }
         holder.textForLE.text = "Your nickname"

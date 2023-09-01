@@ -25,7 +25,12 @@ class AdapterParts(val context: Context, val list:ArrayList<Parts>, val rvClick:
                         "pubg1" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.pubg1))
                         "love3" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.love3))
                         "logo9" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.logo9))
-
+                        "gaming" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.gaming))
+                        "assassin" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.assassians5))
+                        "clown" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.clown1))
+                        "friday" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.juma))
+                        "animeboys" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.animeboys23))
+                        "animegirls" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.animegirls20))
                         else -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_baseline_broken_image_24))
 
                     }

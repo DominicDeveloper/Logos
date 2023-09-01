@@ -8,81 +8,96 @@
     android:layout_height="match_parent"
     tools:context=".FinalActivity">
 
-
-    <ScrollView
-        android:id="@+id/scrollView"
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/finalCardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="380dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:layout_height="match_parent">
+            <ImageView
+                android:contentDescription="@string/image"
+                android:src="@drawable/logo9"
+                android:background="@color/black"
+                android:id="@+id/finalImage"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
-            <androidx.cardview.widget.CardView
+            <EditText
+                android:autofillHints="username"
+                android:contentDescription="@string/text"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:id="@+id/finalCardView"
-                android:layout_width="match_parent"
-                android:layout_height="380dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.8"
+                android:background="@drawable/borderly"
+                android:id="@+id/finalEditText"
+                android:textSize="33sp"
+                android:hint="@string/your_text_here"
+                android:textColorHint="@color/hint"
+                android:textAllCaps="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/ffont1"
+                android:gravity="center"
+                android:textIsSelectable="false"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="13dp"
+                android:padding="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"
+                android:inputType="text" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:src="@drawable/logo9"
-                        android:id="@+id/finalImage"
-                        android:scaleType="fitXY"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-
-                    <EditText
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintVertical_bias="0.8"
-                        android:background="@drawable/borderly"
-                        android:id="@+id/finalEditText"
-                        android:textSize="33sp"
-                        android:hint="Your text here"
-                        android:textColorHint="@color/hint"
-                        android:textAllCaps="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/ffont1"
-                        android:gravity="center"
-                        android:textIsSelectable="false"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="13dp"
-                        android:padding="13dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <View
-                        android:id="@+id/view1"
-                        android:background="@drawable/open_24"
-                        android:layout_marginBottom="20dp"
-                        app:layout_constraintBottom_toTopOf="@id/finalEditText"
-                        app:layout_constraintLeft_toLeftOf="@id/finalEditText"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/view1"
+                android:background="@drawable/open_24"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@id/finalEditText"
+                app:layout_constraintLeft_toLeftOf="@id/finalEditText"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
 
 
 
-            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/finalCardView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ScrollViewSize">
+
+
 
             <TextView
                 android:id="@+id/finalTextView"
-                app:layout_constraintTop_toBottomOf="@id/finalCardView"
+                app:layout_constraintTop_toTopOf="parent"
                 android:textSize="16sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Choose your text color"
+                android:text="@string/choose_your_text_color"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
@@ -167,6 +182,9 @@
                 android:layout_height="wrap_content"/>
 
 
+
+
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/finalBtnSave"
                 android:layout_width="match_parent"
@@ -178,26 +196,28 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
                 app:cornerRadius="10dp"
-                android:text="SAVE"
+                android:text="@string/save"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:backgroundTint="@color/main"
                 android:layout_marginBottom="16dp"
                 android:layout_height="wrap_content"/>
 
-            <ProgressBar
-                android:id="@+id/finalProgress"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@id/finalCardView"
-                app:layout_constraintBottom_toBottomOf="@id/finalCardView"
-                android:visibility="invisible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/finalProgress"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/finalCardView"
+        app:layout_constraintBottom_toBottomOf="@id/finalCardView"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 

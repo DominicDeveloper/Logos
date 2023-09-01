@@ -74,6 +74,8 @@ class ListActivity : AppCompatActivity() {
     private fun getType():String{
         when(TypeOfImage.type){
             "GAMING LOGO" -> return "gaming"
+            "ASSASSINS LOGO" -> return "assassin"
+            "CLOWNS LOGO" -> return "clown"
             "ESPORTS LOGO" -> return "esports"
             "FF LOGO" -> return "ff"
             "ANIME LOGO GIRLS" -> return "animegirls"

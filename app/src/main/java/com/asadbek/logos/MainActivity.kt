@@ -8,6 +8,7 @@ import com.asadbek.logos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    val handler = Handler()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -15,8 +16,9 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-        val handler = Handler()
+
         handler.postDelayed(runnable,1000)
+
 
     }
     val runnable:Runnable = Runnable(){
@@ -24,8 +26,17 @@ class MainActivity : AppCompatActivity() {
             nextAct()
         }
     }
+
+
+
+
+
     private fun nextAct(){
         val intent = Intent(this,SecondActivity::class.java)
         startActivity(intent)
+        finish()
     }
+
+
+
 }

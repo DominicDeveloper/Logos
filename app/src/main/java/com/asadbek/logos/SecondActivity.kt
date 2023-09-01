@@ -14,6 +14,7 @@ import com.asadbek.logos.databinding.ActivitySecondBinding
 import com.asadbek.logos.models.CurrentImg
 import com.asadbek.logos.models.Parts
 import com.asadbek.logos.models.TypeOfImage
+import kotlin.system.exitProcess
 
 class SecondActivity : AppCompatActivity() {
     lateinit var binding: ActivitySecondBinding
@@ -60,11 +61,13 @@ class SecondActivity : AppCompatActivity() {
          }
 
     private fun loadList() {
-       // list.add(Parts("GAMING LOGO","logo_1"))
+       list.add(Parts("GAMING LOGO","gaming"))
+        list.add(Parts("ASSASSINS LOGO","assassin"))
+        list.add(Parts("CLOWNS LOGO","clown"))
        // list.add(Parts("ESPORTS LOGO","logo_2"))
       //  list.add(Parts("FF LOGO","logo_3"))
-      //  list.add(Parts("ANIME LOGO GIRLS","logo_4"))
-      //  list.add(Parts("ANIME LOGO BOYS","logo_5"))
+        list.add(Parts("ANIME LOGO GIRLS","animegirls"))
+        list.add(Parts("ANIME LOGO BOYS","animeboys"))
         list.add(Parts("FOR BOYS","boys19"))
         list.add(Parts("FOR GIRLS","girls1"))
         list.add(Parts("MULTI","multi1"))
@@ -74,15 +77,11 @@ class SecondActivity : AppCompatActivity() {
         list.add(Parts("PUBG LOGO","pubg1"))
       //  list.add(Parts("FRIDAY LOGO UZBEK","logo_13"))
         list.add(Parts("LOVE","love3"))
+        list.add(Parts("FRIDAY LOGO UZBEK","friday"))
     }
     private fun sensor(){
 
     }
 
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-
-
-        return super.onTouchEvent(event)
-    }
 }

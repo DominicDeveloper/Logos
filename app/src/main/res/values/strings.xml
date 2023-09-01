@@ -2,4 +2,9 @@
     <string name="app_name">Logos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">SAVE</string>
+    <string name="choose_your_text_color">Choose your text color</string>
+    <string name="your_text_here">Your text here</string>
+    <string name="image">image</string>
+    <string name="text">text</string>
 </resources>
