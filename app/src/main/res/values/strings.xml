@@ -7,4 +7,7 @@
     <string name="your_text_here">Your text here</string>
     <string name="image">image</string>
     <string name="text">text</string>
+    <string name="about_us">About us</string>
+    <string name="rateup">RateUp</string>
+    <string name="other_apps">Other apps</string>
 </resources>

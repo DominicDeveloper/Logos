@@ -1,13 +1,12 @@
 package com.asadbek.logos
 
 import android.content.ContentValues
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -16,7 +15,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.AdapterView
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -31,10 +29,16 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
 
+const val INTERSTIAL = "ca-app-pub-3426494742122444/5383845770"
+private var mInterstitialAd: InterstitialAd? = null
 class FinalActivity : AppCompatActivity() {
     lateinit var binding: ActivityFinalBinding
     lateinit var list:ArrayList<LogoModul>
@@ -55,9 +59,26 @@ class FinalActivity : AppCompatActivity() {
         listStyles = ArrayList()
         listTextStyles = ArrayList()
 
-        listStyles.addAll(getAllMy())
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this, INTERSTIAL,adRequest,object: InterstitialAdLoadCallback(){
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(p0: InterstitialAd) {
+                mInterstitialAd = p0
+
+            }
+        })
+        MyAsync().execute()
         getImage()
-        getTextStyles()
+
+
+
+
+
+
 
         binding.finalCardViewBlack.setOnClickListener {
             anim(binding.finalCardViewBlack)
@@ -88,7 +109,7 @@ class FinalActivity : AppCompatActivity() {
         binding.spinner.onItemSelectedListener = object : 
         AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                binding.finalEditText.setTypeface(listStyles[p2])
+                binding.finalEditText.typeface = listStyles[p2]
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -172,6 +193,11 @@ class FinalActivity : AppCompatActivity() {
             binding.finalEditText.setBackgroundDrawable(ContextCompat.getDrawable(this,R.drawable.transparent))
             binding.finalEditText.isCursorVisible = false
             binding.view1.visibility= View.INVISIBLE
+            if (mInterstitialAd != null){
+                mInterstitialAd?.show(this)
+            }else{
+                // no loaded ads
+            }
             newStep()
         }
     }
@@ -280,6 +306,34 @@ class FinalActivity : AppCompatActivity() {
         listMw.add(Typeface.createFromAsset(assets,"fonts/ffontt10.ttf"))
 
         return listMw
+
+    }
+
+
+    inner class MyAsync:AsyncTask<Void,Void,Void?>(){
+        @Deprecated("Deprecated in Java")
+        @RequiresApi(Build.VERSION_CODES.N)
+        override fun onPreExecute() {
+            super.onPreExecute()
+            binding.finalProgress2.visibility = View.VISIBLE
+            binding.finalProgress2.setProgress(100,true)
+
+        }
+        @Deprecated("Deprecated in Java")
+        @RequiresApi(Build.VERSION_CODES.N)
+        override fun doInBackground(vararg p0: Void?): Void? {
+            getTextStyles()
+            listStyles.addAll(getAllMy())
+
+            return null
+        }
+
+        @Deprecated("Deprecated in Java")
+        override fun onPostExecute(result: Void?) {
+            super.onPostExecute(result)
+            binding.finalProgress2.visibility = View.GONE
+
+        }
 
     }
 

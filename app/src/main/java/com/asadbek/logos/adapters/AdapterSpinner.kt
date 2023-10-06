@@ -2,7 +2,6 @@ package com.asadbek.logos.adapters
 
 import android.content.Context
 import android.graphics.Typeface
-import android.os.AsyncTask
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import android.widget.TextView
 import com.asadbek.logos.R
 
 class AdapterSpinner(val context: Context,val list:ArrayList<String>):BaseAdapter() {
+    var listMe = ArrayList<Typeface>()
     override fun getCount(): Int {
         return list.size
     }
@@ -26,7 +26,6 @@ class AdapterSpinner(val context: Context,val list:ArrayList<String>):BaseAdapte
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         val itemView:View
-        val listMe = ArrayList<Typeface>()
         listMe.addAll(getAllMy(context))
         if (p1 == null){
             itemView = LayoutInflater.from(p2?.context).inflate(R.layout.item_spinner,p2,false)
@@ -75,4 +74,5 @@ class AdapterSpinner(val context: Context,val list:ArrayList<String>):BaseAdapte
         return listMw
 
     }
+
 }

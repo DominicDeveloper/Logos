@@ -31,6 +31,7 @@ class AdapterParts(val context: Context, val list:ArrayList<Parts>, val rvClick:
                         "friday" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.juma))
                         "animeboys" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.animeboys23))
                         "animegirls" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.animegirls20))
+                        "hacker" -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.hacker))
                         else -> itemRv.findViewById<ImageView>(R.id.itemPartImg).setImageDrawable(ContextCompat.getDrawable(context,R.drawable.ic_baseline_broken_image_24))
 
                     }

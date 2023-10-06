@@ -17,12 +17,7 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -37,7 +32,6 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.radiobutton.MaterialRadioButton
-import com.google.android.material.textfield.TextInputEditText
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -105,6 +99,10 @@ class LogosAdapter(private val activity: Activity,private val context: Context,p
                 holder.textForBGML.visibility = View.GONE
             }
             "animegirls" -> {
+                holder.textForLE.visibility = View.VISIBLE
+                holder.textForBGML.visibility = View.GONE
+            }
+            "hacker" -> {
                 holder.textForLE.visibility = View.VISIBLE
                 holder.textForBGML.visibility = View.GONE
             }
